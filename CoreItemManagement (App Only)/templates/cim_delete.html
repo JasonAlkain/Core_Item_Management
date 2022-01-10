@@ -1,0 +1,44 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Delete Item</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%; text-align: center">
+    <!-- Container -->
+    <div style="width: 90%; text-align: center margin: auto 0px;">
+        <!-- Container -->
+        <strong>
+            <h3>Delete</h3>
+            <span>
+                <h4>Name: {{ item.name }}</h4>
+                <h4>UPC: {{ item.upc }}</h4>
+            </span>
+        </strong>
+        <br>
+        <!-- Container -->
+    </div>
+    <!-- Container -->
+    <!-- Container -->
+    <div>
+        <!-- Container -->
+        <form method="POST" class="border" style="border-color: red;">
+            {% csrf_token %}
+            <strong><h3>Are you sure you want to remove this item?</h3></strong>
+            <br>
+            <button id="item-delete-form-y" type="submit" name="item_delete" style="background-color: red;">Confirm</button>
+        </form>
+        <br>
+        <!-- Container -->
+    </div>
+    <!-- Container -->
+</div>
+{% endblock %}

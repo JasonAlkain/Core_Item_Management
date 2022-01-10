@@ -1,0 +1,30 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Edit Item</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%; text-align: center">
+    <!-- Container -->
+    <div style="width: 90%; text-align: center margin: auto 0px;">
+        <!-- Container -->
+        <form method="POST" class="border">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <button id="item-update-form" type="submit" name="Update_item">Update Item</button>
+        </form>
+        <br>
+        <!-- Container -->
+    </div>
+    <!-- Container -->
+</div>
+{% endblock %}

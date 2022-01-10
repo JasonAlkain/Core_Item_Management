@@ -1,0 +1,72 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Vendor View</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<!--
+Variables:
+{{ pk.part_num }}
+{{ pk.name }}
+{{ pk.count }}
+{{ pk.category }}
+{{ pk.price }}
+{{ pk.vendor }}
+-->
+<div style="width: 100%; text-align: center">
+    <!-- Container -->
+    <div style="display: inline-flex;">
+        <!-- Table -->
+        <div style="float: left; margin: 1rem;">
+            <table style="width: 448px;">
+                <tr class="left">
+                    <th>Name:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ vendor.name }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Vendor Number:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ vendor.number }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Category:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ vendor.category }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Contact:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ vendor.contact }}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Table -->
+        <!-- Image -->
+        <div style="float: right; margin: 1rem;">
+            <img src="https://pngimg.com/uploads/question_mark/question_mark_PNG17.png" alt="{{ vendor.vendor_name }} Image">
+        </div>
+        <!-- Image -->
+    </div>
+    <!-- Container -->
+    <!-- Container -->
+    <div>
+        <a class="page_button" href="/CoreItemManagement/vendor/edit/{{ vendor.id }}/">Edit</a>
+        <a class="page_button" href="/CoreItemManagement/vendor/{{ vendor.id }}?delete={{ vendor.item_pn }}">Delete</a>
+    </div>
+    <!-- Container -->
+</div>
+
+{% endblock %}

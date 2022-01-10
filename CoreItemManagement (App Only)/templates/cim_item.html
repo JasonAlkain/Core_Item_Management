@@ -1,0 +1,67 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Item View</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%; text-align: center">
+    <!-- Container -->
+    <div style="display: inline-flex;">
+        <!-- Table -->
+        <div style="float: left; margin: 1rem;">
+            <table style="width: 448px;">
+                <tr class="left">
+                    <th>Name:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.name }}</td>
+                </tr>
+                <tr class="left">
+                    <th>UPC:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.upc }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Count:</th>
+                    <th>Price:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.count }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Category:</th>
+                    <th>Vendor:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.vendor_id }}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Table -->
+        <!-- Image -->
+        <div style="float: right; margin: 1rem;">
+            <img src="https://pngimg.com/uploads/question_mark/question_mark_PNG17.png" alt="{{ item.item_name }} Image">
+        </div>
+        <!-- Image -->
+    </div>
+    <!-- Container -->
+    <!-- Container -->
+    <div>
+        <a class="mod_btn" href="{% url 'cim_edit' item.id %}">Edit</a>
+        <a class="page_button" href="{% url 'cim_delete' item.id %}">Delete</a>
+    </div>
+    <!-- Container -->
+</div>
+
+{% endblock %}
